@@ -13,3 +13,4 @@ rankhospital <- function(state, problem, num) {
 }
 r <- rankhospital("MN", "heart attack", "worst")
 r
+LKN

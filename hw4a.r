@@ -13,9 +13,8 @@ best <- function(state, problem) {
   if (c == FALSE) {print("invalid arguments") 
     break}
   p = 17
-  v = "heart"
   if (problem == "heart attack") { p = 11}
-  else if (problem == "prnuemonia") { p = 23; v = "pneumonia"}
+  else if (problem == "prnuemonia") { p = 23}
   tabla = doc[ , c(2, 7, p)]
   names(tabla) <- c("Hospital.Name", "State","problem")
   tabla <- subset(tabla, tabla$State == state)
