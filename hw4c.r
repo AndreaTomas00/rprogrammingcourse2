@@ -1,6 +1,5 @@
 doc <- read.csv("C:/Users/antop/Documents/R/outcome-of-care-measures.csv", colClasses = "character")
-states = as.list(unique(doc$State))
-states
+
 rankall <- function (problem, num){
   check <- function(problem){
     problems = list("pneumonia", "heart attack", "heart failure" )
