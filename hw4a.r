@@ -14,11 +14,11 @@ best <- function(state, problem) {
     break}
   p = 17
   if (problem == "heart attack") { p = 11}
-  else if (problem == "prnuemonia") { p = 23}
+  else if (problem == "pneumonia") { p = 23}
   tabla = doc[ , c(2, 7, p)]
   names(tabla) <- c("Hospital.Name", "State","problem")
   tabla <- subset(tabla, tabla$State == state)
   tabla <- tabla[order(as.numeric(tabla$problem), tabla$Hospital.Name, method = "shell"), ]
-}
-r <- best("AR", "heart failure")
+  }
+r <- best("AK", "pneumonia")
 r
