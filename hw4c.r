@@ -16,16 +16,19 @@ rankall <- function (problem, num){
   tabla = doc[ , c(2, 7, p)]
   names(tabla) <- c("Hospital.Name", "State","problem")
   states = as.list(unique(doc$State))
+  v = num
+  if (num == "best") { v = 1}
   r <- data.frame("Hospital" = NULL, "State" = NULL)
   for (state in states) {
+    if (num == "worst") { v = nrow(tabla)}
     t <- subset(tabla, tabla$State == state)
     t <- t[order(as.numeric(t$problem), t$Hospital.Name, method = "shell"), ]
-    r <- rbind(r, c(t[num, 1], state))
+    r <- rbind(r, c(t[v, 1], state))
     t <- tabla
   }
   r
 }
 
-result <- rankall("heart attack", 20)
+result <- rankall("heart attack", "best")
 head(result)
 

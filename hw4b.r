@@ -6,11 +6,10 @@ rankhospital <- function(state, problem, num) {
   tabla <- data.frame(tabla, problem = as.numeric(tabla$problem))
   tabla <- tabla[ , c(1,2,4)]
   tabla <- na.omit(tabla)
-  v = num
+  v = as.numeric(num)
   if (num == "worst") { v = nrow(tabla)}
   if (num == "best") { v = 1}
   hospi <- tabla[ v, 1] 
 }
-r <- rankhospital("MN", "heart attack", "worst")
+r <- rankhospital("NC", "heart attack", "worst")
 r
-LKN
